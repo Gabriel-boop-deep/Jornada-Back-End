@@ -1,7 +1,7 @@
 //Criando o objeto que irá conter dados dois pais
 
 const meusPais = {
-    mãe: 'Eudemeire',
+    mae: 'Eudemeire',
     pai: 'Hildebrando'
 };
 
@@ -14,6 +14,11 @@ const pessoa = {
 // Com esse codigo se faz a desestruturacao em js
 const { nome, sobreNome, pais } = pessoa;
 
-console.log(nome, sobreNome, pais);
+console.log(pais);
 
 
+console.log(pessoa.pais['mae'])
+
+for (let itens of pessoa.pais) {
+    console.log(itens)
+}
