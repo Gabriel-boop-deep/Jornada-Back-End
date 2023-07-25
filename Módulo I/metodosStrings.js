@@ -1,7 +1,7 @@
 //Usando o método indexOf
 
 
-const numeros = [5, 4, 3, 2, 1];
+let numeros = [5, 4, 3, 2, 1];
 
 const posicao = numeros.indexOf(3);
 
@@ -17,9 +17,12 @@ console.log(numeros.join("..."));
 
 //Usando o método slice
 
-console.log(numeros.slice(0, 3));
+// console.log(numeros.slice(0, 3));
 
 
 //Usando o método splice
 
-console.log(numeros.splice(0, 1, 5))
+numeros = [5, 4, 3, 21, 1]
+numeros.splice(numeros.length, 0, 3)
+numeros.splice(numeros.indexOf(3), 1)
+console.log(numeros)
