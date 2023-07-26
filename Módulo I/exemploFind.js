@@ -24,3 +24,5 @@ function comprar(marca, arrayObjetos) {
     console.log(comprarCarro);
 }
 comprar('Fiat', concessionaria)
+
+
