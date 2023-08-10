@@ -1,0 +1,24 @@
+/* Exemplo de estilo: */
+/* Mude as propriedades conforme sua preferência */
+
+/* Alterar o peso da fonte para negrito */
+.monaco-editor,
+.monaco-editor .mtki,
+.monaco-editor .mtkb {
+    font-weight: bold;
+}
+
+/* Aumentar o tamanho da fonte */
+.monaco-editor,
+.monaco-editor .mtki,
+.monaco-editor .mtkb {
+    font-size: 16px;
+}
+
+/* Alterar a cor da fonte */
+.monaco-editor,
+.monaco-editor .mtki,
+.monaco-editor .mtkb {
+    color: #ff0000;
+    /* Substitua pela cor desejada */
+}
