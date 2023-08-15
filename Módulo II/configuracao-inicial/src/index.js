@@ -1,18 +1,18 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 
 const app = express();
 
-const { filtrarAluno, filtrarNomeAluno } = require("./controladores/filtrarAluno")
+const rotas = require("./rotas");
+app.use(bodyParser.json());
 
+// app.use((req, res, next) => {
+//     console.log("Indo atrás do pessoal do g sep i");
+//     next();
+// })
 
-app.get("/alunos", filtrarNomeAluno);
+app.use(rotas);
 
-app.get("/alunos/:id", filtrarAluno);
-
-app.get("/", (req, res) => {
-    res.send("Estou ok, e servindo ao vivo, tamu junto pessoal...");
-}
-)
 
 app.listen(8000,
     console.log("Servidor funcionando...")
