@@ -6,22 +6,27 @@ let listarAlunos = (req, res) => {
 
 
 const filtrarIdAlunos = (req, res) => {
-    let resultado = [];
     const { id } = req.params;
-    resultado = alunos.find((aluno) => {
-        return aluno.id = Number(id);
+    const aluno = alunos.find((aluno) => {
+        return aluno.id === Number(id);
     });
-    res.status(200).json(resultado);
+    if (!aluno) {
+        res.status(404).json({ mensagem: "Aluno não foi encontrado..." });
+    }
+    res.status(200).json(aluno);
 
 }
 
 const cadastrarAluno = (req, res) => {
-    const { nome, email, status } = req.body;
+    const { nome, email, stack, status } = req.body;
     if (!nome) {
-        return res.status(400).json({ mensagem: "O nome é obrigatório" });
+        return res.status(400).json({ mensagem: "O nome é obrigatório." });
     }
     if (!email) {
-        return res.status(400).json({ mensagem: "O email é obrigatório" });
+        return res.status(400).json({ mensagem: "O email é obrigatório." });
+    }
+    if (!stack) {
+        return res.status(400).json({ mensagem: "A stack é obrigatória." })
     }
 
     const aluno = {
@@ -63,7 +68,6 @@ const atualizarAluno = (req, res) => {
 const atualizarStatus = (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
-    console.log(req.body)
     const aluno = alunos.find((aluno) => {
         return aluno.id = Number(id);
     });
@@ -90,7 +94,7 @@ const apagarAluno = (req, res) => {
             return dadosAluno.id !== Number(id);
         }
     )
-    return res.status(200).json(alunos)
+    return res.status(200).json(alunos);
 }
 
 module.exports = {

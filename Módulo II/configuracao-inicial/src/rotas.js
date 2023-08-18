@@ -5,7 +5,7 @@ const rotas = express();
 const aluno = require("./controladores/filtrarAluno")
 
 rotas.get("/", (req, res) => {
-    res.send("Olá seja bem-vindo")
+    res.send("Olá seja bem-vindo!")
 });
 
 rotas.get("/alunos", aluno.listarAlunos);
